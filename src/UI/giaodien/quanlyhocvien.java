@@ -43,9 +43,7 @@ public class quanlyhocvien extends javax.swing.JFrame {
         init(); 
         MaKH=id;
        fillComboBox(); 
-       fillGridView(); 
-     
-     
+       fillGridView();     
 }
 
    

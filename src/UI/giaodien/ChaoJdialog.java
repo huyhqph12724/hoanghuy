@@ -32,7 +32,7 @@ public class ChaoJdialog extends javax.swing.JFrame {
    String check="";
  
      void intit(){
-            new Timer(10, new ActionListener() {
+            new Timer(50, new ActionListener() {
             @Override
             
             public void actionPerformed(ActionEvent e) {

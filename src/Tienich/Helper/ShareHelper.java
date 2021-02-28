@@ -43,29 +43,19 @@ public class ShareHelper {
         }
     }
 
-    /**
-     * * Đọc hình ảnh logo chuyên đề * @param fileName là tên file logo *
-     * @return ảnh đọc được
-     */
+   
     public static ImageIcon readLogo(String fileName) {
         File path = new File("logos", fileName);
         return new ImageIcon(path.getAbsolutePath());
     }
-    /**
-     * * Đối tượng này chứa thông tin người sử dụng sau khi đăng nhập
-     */
+    
     public static NhanVien USER = null;
 
-    /**
-     * * Xóa thông tin của người sử dụng khi có yêu cầu đăng xuất
-     */
     public static void logoff() {
         ShareHelper.USER = null;
     }
 
-    /**
-     * * Kiểm tra xem đăng nhập hay chưa * @return đăng nhập hay chưa
-     */
+   
     public static boolean authenticated() {
         return ShareHelper.USER != null;
     }
