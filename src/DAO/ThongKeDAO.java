@@ -5,18 +5,17 @@
  */
 package DAO;
 
-/**
- *
- * @author DELL-PC
- */
 import Tienich.Helper.JdbcHelper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author Admin
+ */
 public class ThongKeDAO {
-
     public List<Object[]> getNguoiHoc() {
         List<Object[]> list = new ArrayList<>();
         try {
@@ -66,7 +65,8 @@ public class ThongKeDAO {
                     };
                     list.add(model);
                 }
-            } finally {
+            } 
+            finally {
                 rs.getStatement().getConnection().close();
             }
         } catch (SQLException ex) {

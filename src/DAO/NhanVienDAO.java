@@ -7,16 +7,16 @@ package DAO;
 
 import Model.NhanVien;
 import Tienich.Helper.JdbcHelper;
-import java.sql.ResultSet; 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  *
- * @author DELL-PC
+ * @author Admin
  */
 public class NhanVienDAO {
-
     public void insert(NhanVien model) {
         String sql = "INSERT INTO NhanVien (MaNV, MatKhau, HoTen, VaiTro) VALUES (?, ?, ?, ?)";
         JdbcHelper.executeUpdate(sql, model.getMaNV(), model.getMatKhau(), model.getHoTen(), model.getVaiTro());

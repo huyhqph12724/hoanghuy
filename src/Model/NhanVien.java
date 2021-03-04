@@ -7,10 +7,9 @@ package Model;
 
 /**
  *
- * @author DELL-PC
+ * @author Admin
  */
 public class NhanVien {
-
     private String maNV;
     private String matKhau;
     private String hoTen;

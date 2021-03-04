@@ -9,63 +9,51 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
-
 /**
  *
- * @author DELL-PC
+ * @author Admin
  */
+public class DateHelper {
 
+    static final SimpleDateFormat DATE_FORMATER = new SimpleDateFormat("dd/MM/yyyy");
 
-    public class DateHelper {
+    public static Date now() {
+        return new Date();
+    }
 
-        static final SimpleDateFormat DATE_FORMATER = new SimpleDateFormat("dd/MM/yyyy");
-
-        public static Date toDate(String date, String... pattern) {
-            try {
-                if (pattern.length > 0) {
-                    
-                    DATE_FORMATER.applyPattern(pattern[0]);
-                    
-                }
-                if (date == null) {
-                    return DateHelper.now();
-                }
-                System.out.println(date);
-                return DATE_FORMATER.parse(date);
-            } catch (ParseException ex) {
-                throw new RuntimeException(ex);
-            }
-        }
-
-     
-        public static String toString(Date date, String... pattern) {
+    public static Date toDate(String date, String... pattern) {
+        try {
             if (pattern.length > 0) {
+
                 DATE_FORMATER.applyPattern(pattern[0]);
+
             }
             if (date == null) {
-                date = DateHelper.now();
+                return DateHelper.now();
             }
-            return DATE_FORMATER.format(date);
+            System.out.println(date);
+            return DATE_FORMATER.parse(date);
+        } catch (ParseException ex) {
+            throw new RuntimeException(ex);
         }
+    }
 
-      
-         
-        public static Date now() {
-            return new Date();
+    public static String toString(Date date, String... pattern) {
+        if (pattern.length > 0) {
+            DATE_FORMATER.applyPattern(pattern[0]);
         }
-
-      
-        public static Date addDays(Date date, int days) {
+        if (date == null) {
+            date = DateHelper.now();
+        }
+        return DATE_FORMATER.format(date);
+    }
+public static Date addDays(Date date, int days) {
             date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
             return date;
         }
-
-        
-        public static Date add(int days) {
+ public static Date add(int days) {
             Date now = DateHelper.now();
             now.setTime(now.getTime() + days * 24 * 60 * 60 * 1000);
             return now;
         }
-    }
-
+}

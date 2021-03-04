@@ -5,22 +5,19 @@
  */
 package DAO;
 
-/**
- *
- * @author DELL-PC
- */
-
-
 import Model.ChuyenDe;
 import Tienich.Helper.JdbcHelper;
-    import java.sql.ResultSet ;
-    import java.sql.SQLException ;
-    import java.util.ArrayList ;
-    import java.util.List ;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-    public class ChuyenDeDAO {
-
-        public void insert(ChuyenDe model) {
+/**
+ *
+ * @author Admin
+ */
+public class ChuyenDeDAO {
+    public void insert(ChuyenDe model) {
             String sql = "INSERT INTO ChuyenDe (MaCD, TenCD, HocPhi, ThoiLuong, Hinh, MoTa) VALUES (?, ?, ?, ?, ?, ?)";
             JdbcHelper.executeUpdate(sql, model.getMaCD(), model.getTenCD(), model.getHocPhi(), model.getThoiLuong(), model.getHinh(), model.getMoTa());
         }
@@ -77,4 +74,4 @@ import Tienich.Helper.JdbcHelper;
             model.setThoiLuong(rs.getInt("ThoiLuong"));
             return model;
         }
-    }
+}

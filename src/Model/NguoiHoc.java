@@ -4,16 +4,16 @@
  * and open the template in the editor.
  */
 package Model;
- 
-import java.util.Date; 
+
 import Tienich.Helper.DateHelper;
+import java.util.Date;
+
 /**
  *
- * @author DELL-PC
+ * @author Admin
  */
 public class NguoiHoc {
-
-    private String maNH;
+     private String maNH;
     private String hoTen;
     private Date ngaySinh;
     private boolean gioiTinh;

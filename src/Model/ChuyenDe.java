@@ -7,11 +7,10 @@ package Model;
 
 /**
  *
- * @author DELL-PC
+ * @author Admin
  */
 public class ChuyenDe {
-
-        private String maCD;
+    private String maCD;
         private String tenCD;
         private double hocPhi;
         private int thoiLuong;
@@ -70,5 +69,5 @@ public class ChuyenDe {
     public void setMoTa(String moTa) {
         this.moTa = moTa;
     }
-        
-    }
+
+}

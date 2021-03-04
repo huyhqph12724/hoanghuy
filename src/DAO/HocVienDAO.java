@@ -5,10 +5,6 @@
  */
 package DAO;
 
-/**
- *
- * @author DELL-PC
- */
 import Model.HocVien;
 import Tienich.Helper.JdbcHelper;
 import java.sql.ResultSet;
@@ -16,9 +12,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author Admin
+ */
 public class HocVienDAO {
-
-    public void insert(HocVien model) {
+     public void insert(HocVien model) {
         String sql = "INSERT INTO HocVien(MaKH, MaNH, Diem) VALUES(?, ?, ?)";
         JdbcHelper.executeUpdate(sql, model.getMaKH(), model.getMaNH(), model.getDiem());
     }

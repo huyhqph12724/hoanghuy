@@ -5,22 +5,18 @@
  */
 package DAO;
 
-/**
- *
- * @author DELL-PC
- */
 import Model.NguoiHoc;
 import Tienich.Helper.JdbcHelper;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-
-
+import java.sql.ResultSet;
+import java.sql.SQLException;
+/**
+ *
+ * @author Admin
+ */
 public class NguoiHocDAO {
-
-    public void insert(NguoiHoc model) {
+     public void insert(NguoiHoc model) {
         String sql = "INSERT INTO NguoiHoc (MaNH, HoTen, NgaySinh, GioiTinh, DienThoai, Email, GhiChu, MaNV,NgayDK) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
        
         JdbcHelper.executeUpdate(sql, model.getMaNH(), model.getHoTen(), model.getNgaySinh(), model.getGioiTinh(), model.getDienThoai(), model.getEmail(), model.getGhiChu(), model.getMaNV(),model.getNgayDK());

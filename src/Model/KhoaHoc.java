@@ -10,11 +10,10 @@ import java.util.Date;
 
 /**
  *
- * @author DELL-PC
+ * @author Admin
  */
 public class KhoaHoc {
-
-    private int maKH;
+     private int maKH;
     private String maCD;
     private double hocPhi;
     private int thoiLuong;
@@ -91,5 +90,4 @@ public class KhoaHoc {
     public void setNgayTao(Date ngayTao) {
         this.ngayTao = ngayTao;
     }
-
 }

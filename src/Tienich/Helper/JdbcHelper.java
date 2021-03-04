@@ -10,12 +10,14 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-       
 
+/**
+ *
+ * @author Admin
+ */
 public class JdbcHelper {
-
     private static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static String dburl = "jdbc:sqlserver://localhost;database=Polypro";
+    private static String dburl = "jdbc:sqlserver://localhost;database=QuanLiDaoTao";
     private static String username = "123";
     private static String password = "123";
 
@@ -26,9 +28,7 @@ public class JdbcHelper {
             throw new RuntimeException(ex);
         }
     }
-
-  
-    public static PreparedStatement prepareStatement(String sql, Object... args) throws SQLException {
+     public static PreparedStatement prepareStatement(String sql, Object... args) throws SQLException {
         Connection connection = DriverManager.getConnection(dburl, username, password);
         PreparedStatement pstmt = null;
         if (sql.trim().startsWith("{")) {
@@ -41,9 +41,15 @@ public class JdbcHelper {
         }
         return pstmt;
     }
-
-  
-    public static void executeUpdate(String sql, Object... args) {
+public  static ResultSet executeQuery(String sql, Object... args) {
+        try {
+            PreparedStatement stmt = prepareStatement(sql, args);
+            return stmt.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+ public  static void executeUpdate(String sql, Object... args) {
         try {
      
             PreparedStatement stmt = prepareStatement(sql, args);
@@ -57,13 +63,4 @@ public class JdbcHelper {
         }
     }
 
-  
-    public static ResultSet executeQuery(String sql, Object... args) {
-        try {
-            PreparedStatement stmt = prepareStatement(sql, args);
-            return stmt.executeQuery();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
 }

@@ -5,10 +5,6 @@
  */
 package DAO;
 
-/**
- *
- * @author DELL-PC
- */
 import Model.KhoaHoc;
 import Tienich.Helper.JdbcHelper;
 import java.sql.ResultSet;
@@ -16,8 +12,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author Admin
+ */
 public class KhoaHocDAO {
-
     public void insert(KhoaHoc model) {
         String sql = "INSERT INTO KhoaHoc (MaCD, HocPhi, ThoiLuong, NgayKG, GhiChu, MaNV) VALUES (?, ?, ?, ?, ?, ?)";
         JdbcHelper.executeUpdate(sql, model.getMaCD(), model.getHocPhi(), model.getThoiLuong(), model.getNgayKG(), model.getGhiChu(), model.getMaNV());
@@ -84,4 +83,5 @@ public class KhoaHocDAO {
         model.setMaCD(rs.getString("MaCD"));
         return model;
     }
+
 }

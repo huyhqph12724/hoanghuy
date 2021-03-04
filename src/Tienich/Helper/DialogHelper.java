@@ -10,12 +10,12 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author DELL-PC
+ * @author Admin
  */
 public class DialogHelper {
 
     public static void alert(Component parent, String message) {
-        JOptionPane.showMessageDialog(parent, message);
+        JOptionPane.showMessageDialog(parent, message, "Hệ thống quản lý đào tạo", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public static boolean confirm(Component parent, String message) {
@@ -23,7 +23,6 @@ public class DialogHelper {
         return result == JOptionPane.YES_OPTION;
     }
 
-   
     public static String prompt(Component parent, String message) {
         return JOptionPane.showInputDialog(parent, message, "Hệ thống quản lý đào tạo", JOptionPane.INFORMATION_MESSAGE);
     }

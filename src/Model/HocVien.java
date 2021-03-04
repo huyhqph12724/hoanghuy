@@ -7,10 +7,9 @@ package Model;
 
 /**
  *
- * @author DELL-PC
+ * @author Admin
  */
 public class HocVien {
-
     private int maHV;
     private int maKH;
     private String maNH;
@@ -52,5 +51,4 @@ public class HocVien {
     public void setDiem(double diem) {
         this.diem = diem;
     }
-
 }
